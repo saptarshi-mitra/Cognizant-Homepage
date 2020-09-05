@@ -13,51 +13,138 @@ green: #00b140;
 h1,h2,h3,h4,h5,h6{
 	color: #0033a0;
 }
-
-.btn-success{
+.cts-button{
 	background-color: #00b140 !important;
 	border-radius: 0;
 	font-size: 130%;
 	font-weight: 600;
 	text-transform: uppercase;
 }
-
-.btn-success svg{
+.cts-button svg{
 	font-size: 130%;
 	position: relative;
 	top: -3px;
 }
+.scroll-btn{
+	position: fixed;
+	top: 90%;
+	left: 87%;
+	background-color: #0033a0 !important;
+}
+.scroll-btn a{
+	color: #fff;
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 480px){
+	*{
+		padding: 0 3px;
+	}
+	.carousel-image{
+		height: 500px;
+		width: 500px;
+	}
+	.carousel-text{
+		font-size: 12px;
+		position: relative;
+		left: 25px;
+	}
+	.nav_1{
+		display: none;
+	}
+	.cts-button{
+		margin-bottom: 5px;
+	}
+	.scroll-btn{
+		display: none;
+	}
+	.two-stories-first, .two-stories-second{
+		margin-bottom: 10px;
+	}
+}
+@media only screen and (max-width: 768px){
+	*{
+		padding: 0 3px;
+	}
+	.carousel-text{
+		margin-left: -80px;
+		margin-bottom: 80px;
+	}
+	.two-stories-first{
+		padding-bottom: 10px !important;
+	}
+	.two-stories-second{
+		padding-bottom: 27px !important;
+	}
+	.nav_1{
+		display: none;
+	}
+	.scroll-btn{
+		display: none;
+	}
+}
+@media only screen and (max-width: 1024px){
+	.two-stories-first{
+		padding-bottom: 9px;
+	}
+	.two-stories-second{
+		padding-bottom: 57px;
+	}
+}
+@media only screen and (max-width: 1280px){
+	.container{
+		padding: -5px;
+	}
+}
+
 /*------------------*/
 /*1ST NAV PART*/
 /*------------------*/
-
+.css-sprite-world,
+.css-sprite-search{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 4px;
+	background-image: url(../images/css_sprites.png);
+	background-repeat: no-repeat;
+	background-size: 40px 20px;
+}
+.css-sprite-world{
+	background-position: 0 0;
+}
+.css-sprite-search{
+	background-position: -20px 0;
+}
 /*------------------*/
 /*2ND NAV PART*/
 /*------------------*/
-.navbar-brand{
-	font-size: 60px !important;
-	font-weight: 700 !important;
+.brand-name{
+	font-size: 60px;
+	font-weight: 700;
 	color: #0033a0 !important;
 }
 
-.nav-item{
+.items-navbar{
 	padding: 5px 10px !important;
 	transition: all 0.2s;
 }
 
-.nav-item:hover{
+.items-navbar:hover{
 	padding: 5px 10px !important;
 	background-color: #0033a0 !important;
 }
 
-.nav-link{
+.link-navbar{
 	color: #000 !important;
 	transition: all 0.2s;
 }
-.nav-link:hover{
+.link-navbar:hover{
 	color: #fff !important;
+	background-color: #0033a0;
 }
-.nav-link svg{
+.link-navbar svg{
 	font-size: 150%;
 	color: #00b140;
 }
@@ -65,31 +152,21 @@ h1,h2,h3,h4,h5,h6{
 /*------------------*/
 /*CAROUSEL PART*/
 /*------------------*/
-.carousel-caption h5{
+.carousel-text h1{
 	font-size: 350%;
 	font-weight: 600;
-	text-align: left;
+	text-align: left;/*in media*/
 }
-.carousel-caption p{
-	color: #000;
+.carousel-text p{
+	color: #000 !important;
 	font-size: 130%;
-	text-align: left;
+	text-align: left;/*in media*/
 }
-.carousel_text_left{
-	width: 500px;
-	position: relative;
-	left: 100px;
-	bottom: 90px;
-}
-.carousel_text_left button{
-	position: relative;
-	left: -40px;
-}
+
 .carousel-top img{
 	overflow: hidden;
-    background-size: cover;
 	width: 100%;
-	height: 500px;
+	height: 550px;
 }
 /*------------------*/
 /*STORY PART*/
@@ -105,6 +182,9 @@ h1,h2,h3,h4,h5,h6{
 .story-heading{
 	font-weight: 700;
 }
+/*.two-stories-first,..two-stories-second{
+	padding: 0;
+}*/
 /*------------------*/
 /*GREY AREA*/
 /*------------------*/
@@ -117,6 +197,16 @@ h1,h2,h3,h4,h5,h6{
 /*------------------*/
 /*PRESS HEADING*/
 /*------------------*/
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(200%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 .card{
 	border: none;
 }
@@ -131,6 +221,8 @@ h1,h2,h3,h4,h5,h6{
 	color: #00b140;
 }
 .bg-blue{
+	animation-name: fadeIn;
+	animation-duration: 1s;
 	margin: 25px 0;
 	padding: 40px 0;
 	background-color: #0033a0;
